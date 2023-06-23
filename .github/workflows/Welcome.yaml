@@ -1,0 +1,11 @@
+name: 'Display greeting message'
+on: [push]
+jobs:
+  Job-Message-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Welcome to github runner and my OS is ${{runner.os}}"
+      - run: echo "Event name is ${{github.event_name}}"
+      - run: ls ~
+      - run: pwd
+      - run: ls ${{github.workspace}}
