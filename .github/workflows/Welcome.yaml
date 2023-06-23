@@ -8,4 +8,17 @@ jobs:
       - run: echo "Event name is ${{github.event_name}}"
       - run: ls ~
       - run: pwd
-      - run: ls ${{github.workspace}}
+      - run: ls ${{github.workspace}} 
+  Job-Build-OnMacMachine:
+    runs-on: macos-latest
+    steps:
+      - name: Clone Current Repository
+        uses: actions/checkout@v3
+      - name: Install Github CLI
+        run: |
+          brew update     
+          brew install gh
+      - name: Install Microsoft Edge Browser
+        run: |
+          brew update
+          brew install --cask microsoft-edge
